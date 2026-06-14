@@ -6,8 +6,10 @@
     <title>Programa de Posgrados en Políticas y Administración de la Educación - UNTREF</title>
     <meta name="description" content="Posgrados y maestrías en Políticas y Administración de la Educación de la UNTREF. Formación de excelencia para profesionales en gestión institucional y evaluación.">
     
+    <!-- Tailwind CSS para los estilos responsivos y modernos -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Configuración de colores institucionales y tipografía -->
     <script>
         tailwind.config = {
             theme: {
@@ -15,15 +17,15 @@
                     colors: {
                         institucional: {
                             light: '#4b83b8', 
-                            DEFAULT: '#29649b',
+                            DEFAULT: '#29649b', // Azul institucional UNTREF
                             dark: '#1c4773', 
                             surface: '#eef3f7' 
                         },
                         posgrado: {
-                            light: '#f29fc5',   
-                            DEFAULT: '#c26087', 
-                            dark: '#ab163f',    
-                            surface: '#fdf2f6'  
+                            light: '#f29fc5',   // Rosa
+                            DEFAULT: '#c26087', // Magenta
+                            dark: '#ab163f',    // Carmesí/Burdeos
+                            surface: '#fdf2f6'  // Fondo muy suave
                         }
                     }
                 }
@@ -31,10 +33,12 @@
         }
     </script>
  
+    <!-- Fuentes de Google: LATO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
     
+    <!-- Iconos Phosphor -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
  
     <style>
@@ -43,14 +47,23 @@
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        /* Personalización de detalles interactivos nativos */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         
+        /* Personalización de la barra de desplazamiento */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #f29fc5; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #ab163f; }
         
+        /* Animación para los engranajes */
         @keyframes spin-slow { 100% { transform: rotate(360deg); } }
         @keyframes spin-slow-reverse { 100% { transform: rotate(-360deg); } }
         .animate-spin-slow { animation: spin-slow 12s linear infinite; }
@@ -59,18 +72,24 @@
 </head>
 <body class="bg-gray-50 text-black antialiased flex flex-col min-h-screen">
  
+    <!-- Header Institucional (Azul UNTREF) -->
     <header class="bg-institucional text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center">
             <div>
+                <!-- H1: 36px -->
                 <h1 class="text-[36px] leading-tight font-black tracking-tight">UNTREF</h1>
+                <!-- Texto: 16px -->
                 <p class="text-[16px] font-normal text-institucional-surface mt-1">Universidad Nacional de Tres de Febrero</p>
             </div>
             <div class="mt-4 md:mt-0 text-center md:text-right border-t md:border-t-0 md:border-l border-institucional-light pt-4 md:pt-0 md:pl-6">
-                <h2 class="text-[28px] leading-tight font-bold">Programa de Posgrados</h2>
+                <!-- H2 superior: 28px -->
+                <h2 class="text-[28px] leading-tight font-bold">Programa de Posgrados </h2>
+                <!-- Texto: 16px -->
                 <p class="text-[16px] text-institucional-surface">Políticas y Administración de la Educación (PAE)</p>
             </div>
         </div>
         
+        <!-- Navegación por pestañas (Paleta Posgrado) -->
         <nav class="bg-posgrado-dark overflow-x-auto">
             <ul class="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <li><button onclick="openTab(event, 'inicio')" class="tab-btn px-5 py-4 text-[16px] font-bold text-white hover:bg-posgrado-dark border-b-4 border-posgrado-light transition-colors whitespace-nowrap">El Programa</button></li>
@@ -84,14 +103,14 @@
  
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
  
+        <!-- SECCIÓN: INICIO / EL PROGRAMA -->
         <section id="inicio" class="tab-content active">
-            <div class="mb-8 overflow-hidden rounded-xl shadow-md border-t-4 border-posgrado-dark">
-                <img src="https://www.untref.edu.ar/uploads/images/1702578109-maip71-1200x519.png" alt="Fachada Sede Posgrados UNTREF" class="w-full object-cover max-h-[400px]">
-            </div>
- 
-            <div class="bg-white rounded-xl shadow-sm p-8 md:p-12 mb-8 border-t-4 border-posgrado-dark">
+            
+             <div class="bg-white rounded-xl shadow-sm p-8 md:p-12 mb-8 border-t-4 border-posgrado-dark">
                 <div class="mb-10">
+                    <!-- H2: 28px -->
                     <h2 class="text-[28px] text-posgrado-dark font-black mb-6">Sobre el Programa PAE</h2>
+                    <!-- Texto: 16px -->
                     <p class="text-[16px] leading-relaxed text-black mb-6 font-normal">
                         El Programa en Políticas y Administración de la Educación (PAE) tiene como objetivo formar especialistas y profesionales en gestión educativa, dotándolos de un marco teórico-metodológico para el análisis, diseño, implementación, seguimiento y evaluación tanto de instituciones educativas como de la educación en su conjunto.
                     </p>
@@ -101,16 +120,19 @@
                 </div>
  
                 <div class="bg-posgrado-surface border-l-4 border-posgrado-dark p-6 rounded-r-lg">
+                    <!-- H3: 22px -->
                     <h3 class="text-[22px] font-bold text-posgrado-dark mb-4 flex items-center"><i class="ph ph-users-three mr-2 text-[26px]"></i> Autoridades y Comité Académico</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="space-y-3 text-black">
+                            <!-- Texto: 16px -->
                             <p class="text-[16px]"><strong>Director:</strong> Dr. Norberto Fernández Lamarra</p>
                             <p class="text-[16px]"><strong>Coordinación Académica:</strong> Dra. María Gabriela Galli (<a href="mailto:ggalli@untref.edu.ar" class="text-posgrado-dark font-bold hover:underline">ggalli@untref.edu.ar</a>)</p>
                             <p class="text-[16px]"><strong>Asistente Técnica:</strong> Andrea Campagna (<a href="mailto:pae@untref.edu.ar" class="text-posgrado-dark font-bold hover:underline">pae@untref.edu.ar</a>)</p>
                         </div>
                         
                         <div>
+                            <!-- Subtítulo: 18px -->
                             <p class="font-bold text-[18px] text-posgrado-dark mb-2">Comité Académico:</p>
                             <ul class="list-disc pl-5 text-black grid grid-cols-1 sm:grid-cols-2 gap-2 text-[16px] font-normal">
                                 <li>Marisa Silvia Álvarez</li>
@@ -128,25 +150,30 @@
             </div>
         </section>
  
+        <!-- SECCIÓN: ESPECIALIZACIONES -->
         <section id="especializaciones" class="tab-content">
             <div class="text-center mb-10">
+                <!-- H2: 28px -->
                 <h2 class="text-[28px] text-posgrado-dark font-black inline-block border-b-4 border-posgrado-light pb-2">Especializaciones</h2>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Especialización 1 -->
                 <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                     <div class="bg-posgrado-dark p-6 h-28 flex items-center justify-center">
                         <h3 class="text-[22px] font-bold text-white text-center leading-tight">Gestión y Docencia para la Educación Superior</h3>
                     </div>
+                    
                     <div class="p-6 flex-grow flex flex-col">
-                        <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditada por CONEAU RESFC-2024-33-APN-CONEAU#ME; RM 648/17</p>
+                        <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditada por CONEAU RESFC-2024-33-APN-CON EAU#ME; RM 648/17</p>
                         <p class="text-[16px] text-black mb-6 font-normal flex-grow">Forma profesionales especializados para innovar en enseñanza y liderar instituciones con enfoque estratégico. Desarrolla habilidades para la mejora curricular, formación de educadores y análisis de desafíos contemporáneos.</p>
                         
                         <ul class="text-[16px] text-black space-y-3 border-t border-gray-200 pt-4">
                             <li class="flex flex-col">
                                 <div class="flex items-start">
                                     <i class="ph ph-books text-posgrado-light text-[22px] mr-3 mt-0.5"></i>
-                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios.</span>
+                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios (Obligatorios y Electivos).</span>
                                 </div>
                                 <details class="group mt-2 ml-7">
                                     <summary class="text-[16px] text-posgrado-dark font-bold cursor-pointer hover:underline flex items-center">
@@ -154,34 +181,36 @@
                                     </summary>
                                     <ul class="list-disc pl-4 mt-2 space-y-1 text-[16px] text-black font-normal leading-relaxed">
                                         <li>Planeamiento y Gestión de Políticas Educativas</li>
-                                        <li>Teorías de la Administration y de las Organizaciones</li>
+                                        <li>Teorías de la Administración y de las Organizaciones</li>
                                         <li>Formador de Formadores</li>
                                         <li>Didáctica en el nivel de la Educación Superior</li>
                                         <li>Desarrollo Curricular y Calidad de la Educación Superior</li>
-                                        <li>Problemáticas Actuales de la Educación Superior</li>
+                                        <li>Problemáticas Actuales de la Educación Superior. Perspectiva Argentina y Comparada</li>
                                     </ul>
                                 </details>
                             </li>
                             <li class="flex items-start"><i class="ph ph-clock text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Duración:</strong> 15 meses de cursado.</span></li>
                             <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Práctica:</strong> Pasantía Profesional (80hs).</span></li>
-                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador.</span></li>
+                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador individual.</span></li>
                         </ul>
                     </div>
                 </div>
  
+                <!-- Especialización 2 -->
                 <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                     <div class="bg-posgrado-dark p-6 h-28 flex items-center justify-center">
                         <h3 class="text-[22px] font-bold text-white text-center leading-tight">Gestión y Evaluación de Instituciones Educativas</h3>
                     </div>
+                    
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditada por CONEAU - Categoría B -107/18; RM 1939/19</p>
-                        <p class="text-[16px] text-black mb-6 font-normal flex-grow">Forma profesionales especializados en gestión y evaluación de instituciones educativas, capacitados para diseñar políticas, gestionar organizaciones y garantizar calidad pedagógica.</p>
+                        <p class="text-[16px] text-black mb-6 font-normal flex-grow">Forma profesionales especializados en gestión y evaluación de instituciones educativas, capacitados para diseñar políticas, gestionar organizaciones y garantizar calidad pedagógica. Mejora continua de proyectos curriculares.</p>
                         
                         <ul class="text-[16px] text-black space-y-3 border-t border-gray-200 pt-4">
                             <li class="flex flex-col">
                                 <div class="flex items-start">
                                     <i class="ph ph-books text-posgrado-light text-[22px] mr-3 mt-0.5"></i>
-                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios.</span>
+                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios (Obligatorios y Electivos).</span>
                                 </div>
                                 <details class="group mt-2 ml-7">
                                     <summary class="text-[16px] text-posgrado-dark font-bold cursor-pointer hover:underline flex items-center">
@@ -196,26 +225,28 @@
                                     </ul>
                                 </details>
                             </li>
-                            <li class="flex items-start"><i class="ph ph-clock text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Duración:</strong> 15 meses.</span></li>
+                            <li class="flex items-start"><i class="ph ph-clock text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Duración:</strong> 15 meses de cursado.</span></li>
                             <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Práctica:</strong> Pasantía Profesional (80hs).</span></li>
-                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador.</span></li>
+                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador individual.</span></li>
                         </ul>
                     </div>
                 </div>
  
+                <!-- Especialización 3 -->
                 <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all hover:-translate-y-1">
                     <div class="bg-posgrado-dark p-6 h-28 flex items-center justify-center">
                         <h3 class="text-[22px] font-bold text-white text-center leading-tight">Planeamiento y Gestión de la Educación</h3>
                     </div>
+                    
                     <div class="p-6 flex-grow flex flex-col">
                         <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditada por CONEAU Res. 108/18; RM 3113/19</p>
-                        <p class="text-[16px] text-black mb-6 font-normal flex-grow">Forma profesionales especializados en evaluación de políticas y sistemas educativos, con capacidad para la gestión estratégica de organizaciones y programas.</p>
+                        <p class="text-[16px] text-black mb-6 font-normal flex-grow">Forma profesionales especializados en evaluación de políticas y sistemas educativos, con capacidad para la gestión estratégica de organizaciones y programas. Análisis histórico-comparado de realidades educativas.</p>
                         
                         <ul class="text-[16px] text-black space-y-3 border-t border-gray-200 pt-4">
                             <li class="flex flex-col">
                                 <div class="flex items-start">
                                     <i class="ph ph-books text-posgrado-light text-[22px] mr-3 mt-0.5"></i>
-                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios.</span>
+                                    <span><strong class="text-[18px]">Estructura:</strong> 9 seminarios (Obligatorios y Electivos).</span>
                                 </div>
                                 <details class="group mt-2 ml-7">
                                     <summary class="text-[16px] text-posgrado-dark font-bold cursor-pointer hover:underline flex items-center">
@@ -226,60 +257,87 @@
                                         <li>Teorías de la Administración y de las Organizaciones</li>
                                         <li>Problemas Filosóficos de la Educación Contemporánea</li>
                                         <li>Planificación y Gestión de Políticas Públicas</li>
-                                        <li>Políticas y Sistemas Educativos</li>
+                                        <li>Políticas y Sistemas Educativos. Perspectiva Histórica y Comparada</li>
                                         <li>Gestión y Evaluación de Programas Educativos</li>
                                     </ul>
                                 </details>
                             </li>
-                            <li class="flex items-start"><i class="ph ph-clock text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Duración:</strong> 15 meses.</span></li>
-                            <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Práctica:</strong> Pasantía (80hs).</span></li>
-                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador.</span></li>
+                            <li class="flex items-start"><i class="ph ph-clock text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Duración:</strong> 15 meses de cursado.</span></li>
+                            <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Práctica:</strong> Pasantía Profesional (80hs).</span></li>
+                            <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light text-[22px] mr-3 mt-0.5"></i><span><strong class="text-[18px]">Egreso:</strong> Trabajo Final Integrador individual.</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
- 
+
+            <!-- Cuerpo docente de seminarios obligatorios (Agregado) -->
             <div class="mb-8 bg-posgrado-surface border-l-4 border-posgrado-dark p-6 rounded-r-lg">
                 <p class="text-[16px] text-black font-normal leading-relaxed">
-                    <strong>Cuerpo docente:</strong> Martín Aiello, Marisa Álvarez, Mariana Alonso Bra, Carlos Cullen, Norberto Fernández Lamarra, Graciela Frigerio, Pablo García, Norberto Góngora, Marcela Groppo, Alberto Iardelesky, Elisa Lucarelli, Mónica Marquina, Cristian Perez Centeno, María Gabriela Rutty, José Tasat, Lilia Toranzos.
+                    <strong>Cuerpo docente de seminarios obligatorios:</strong> Martín Aiello, Marisa Álvarez, Mariana Alonso Bra, Carlos Cullen, Norberto Ferández Lamarra, Graciela Frigerio, Pablo García, Norberto Góngora, Marcela Groppo, Alberto Iardelesky, Elisa Lucarelli, Mónica Marquina, Cristian Perez Centeno, María Gabriela Rutty, José Tasat, Lilia Toranzos.
                 </p>
             </div>
  
+            <!-- NUEVA SECCIÓN DE SINERGIA Y ARTICULACIÓN -->
             <div class="mt-8 bg-gradient-to-br from-posgrado-surface to-white p-10 rounded-2xl shadow-lg border border-posgrado-light/30 text-center relative overflow-hidden">
+                <!-- Decoración de fondo -->
+                <div class="absolute -top-10 -right-10 text-posgrado-light/10">
+                    <i class="ph-fill ph-gear text-[250px]"></i>
+                </div>
+ 
                 <div class="relative z-10">
+                    <!-- Diagrama Conceptual con Íconos (Funcional sin necesidad de imagen externa) -->
                     <div class="flex flex-col md:flex-row justify-center items-center mb-6 gap-2 md:gap-4">
+                        <!-- Nodo Especialización -->
                         <div class="flex flex-col items-center">
                             <i class="ph-fill ph-gear text-[80px] text-posgrado-light animate-spin-slow"></i>
                             <span class="text-[14px] font-bold text-posgrado mt-1 tracking-wider">ESPECIALIZACIONES</span>
                         </div>
+                          
+                        <!-- Conexión/Flujo -->
                         <div class="rotate-90 md:rotate-0 my-4 md:my-0 text-gray-300">
                             <i class="ph-bold ph-arrow-right text-[32px]"></i>
                         </div>
+                        
+                        <!-- Nodo Maestría -->
                         <div class="flex flex-col items-center">
-                            <i class="ph-fill ph-gear text-[110px] text-posgrado-dark animate-spin-slow-reverse"></i>
+                            <i class="ph-fill ph-gear text-[110px] text-posgrado-dark animate-spin-slow-reverse -ml-2 md:ml-0"></i>
                             <span class="text-[14px] font-bold text-posgrado-dark mt-1 tracking-wider">MAESTRÍAS</span>
                         </div>
                     </div>
-                    <h3 class="text-[26px] md:text-[32px] font-black text-posgrado-dark leading-tight mb-3">Diseña tu propia trayectoria:</h3>
-                    <p class="text-[18px] md:text-[20px] text-black font-normal max-w-2xl mx-auto">Especializaciones que fortalecen tu perfil y convergen en la formación de magíster.</p>
+ 
+                    <!-- Si prefieres usar tu propia imagen en el futuro, descomenta la siguiente línea y borra el div anterior -->
+                    <!-- <img src="ruta-a-tu-imagen.png" alt="" class="mx-auto mb-6 max-w-sm md:max-w-md object-contain"> -->
+ 
+                    <!-- Texto solicitado -->
+                    <h3 class="text-[26px] md:text-[32px] font-black text-posgrado-dark leading-tight mb-3">
+                        Diseña tu propia trayectoria:
+                    </h3>
+                    <p class="text-[18px] md:text-[20px] text-black font-normal max-w-2xl mx-auto">
+                        especializaciones que fortalecen tu perfil y convergen en la formación de magister.
+                    </p>
                 </div>
             </div>
+ 
         </section>
  
+        <!-- SECCIÓN: MAESTRÍAS -->
         <section id="maestrias" class="tab-content">
             <div class="text-center mb-10">
                 <h2 class="text-[28px] text-posgrado-dark font-black inline-block border-b-4 border-posgrado-light pb-2">Maestrías</h2>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- Maestría 1 -->
                 <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col">
                     <div class="bg-posgrado-dark p-8 relative">
                         <div class="absolute top-0 right-0 bg-posgrado-light text-posgrado-dark font-bold text-[16px] px-3 py-1 rounded-bl-lg">MAESTRÍA ACADÉMICA</div>
                         <h3 class="text-[22px] font-black text-white text-center mt-2">Maestría en Política y Administración de la Educación</h3>
                     </div>
+                    
                     <div class="p-8 flex-grow">
                         <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditada por CONEAU - Categoría A - ResFC 355/23; RM 3350/17</p>
-                        <p class="text-[16px] text-black mb-8 font-normal">Forma profesionales capaces de analizar políticas, instituciones y programas educativos, con una mirada crítica orientada a la mejora del sistema educativo.</p>
+                        <p class="text-[16px] text-black mb-8 font-normal">Forma profesionales capaces de analizar políticas, instituciones y programas educativos, con una mirada crítica orientada a la mejora del sistema educativo, promoviendo la investigación como herramienta para la transformación.</p>
                         
                         <div class="bg-posgrado-surface p-6 rounded-lg border border-posgrado-light/30">
                             <h4 class="text-[18px] font-black text-posgrado-dark mb-4 flex items-center"><i class="ph ph-list-dashes mr-2"></i> Estructura Curricular</h4>
@@ -287,37 +345,42 @@
                                 <li class="flex flex-col">
                                     <div class="flex items-start">
                                         <i class="ph ph-check-circle text-posgrado-dark mt-0.5 mr-2 text-[22px]"></i>
-                                        <span><strong>Seminarios:</strong> 12 en total.</span>
+                                        <span><strong>Seminarios:</strong> 12 en total (Fundamentos, Formación General y 4 Electivos).</span>
                                     </div>
                                     <details class="group mt-2 ml-7">
                                         <summary class="text-[16px] text-posgrado-dark font-bold cursor-pointer hover:underline flex items-center">
-                                            <i class="ph ph-caret-right mr-1 transition-transform group-open:rotate-90"></i> Ver Seminarios
+                                            <i class="ph ph-caret-right mr-1 transition-transform group-open:rotate-90"></i> Ver Seminarios Obligatorios
                                         </summary>
                                         <ul class="list-disc pl-4 mt-2 space-y-1 text-[16px] text-black font-normal">
                                             <li>Teorías de la Administración y de las Organizaciones</li>
                                             <li>Problemas Filosóficos de la Educación Contemporánea</li>
                                             <li>Epistemología y Métodos de Investigación</li>
                                             <li>Planeamiento y Gestión de Políticas Educativas</li>
-                                            <li>Políticas y Sistemas Educativos</li>
+                                            <li>Políticas y Sistemas Educativos. Perspectiva Histórica y Comparada</li>
+                                            <li>Gestión y Evaluación de Programas Educativos</li>
+                                            <li>Gestión y Evaluación de Instituciones Educativas</li>
+                                            <li>Desarrollo Curricular y Calidad de la Educación</li>
                                         </ul>
                                     </details>
                                 </li>
                                 <li class="flex items-start"><i class="ph ph-clock text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Duración:</strong> 24 meses de cursado.</span></li>
-                                <li class="flex items-start"><i class="ph ph-flask text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Investigación:</strong> Taller de Tesis y Pasantía (160 hs).</span></li>
-                                <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Egreso:</strong> Tesis de Maestría.</span></li>
+                                <li class="flex items-start"><i class="ph ph-flask text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Investigación:</strong> Taller de Tesis (anual) y Pasantía de Investigación (160 horas).</span></li>
+                                <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Egreso:</strong> Tesis de Maestría con defensa oral y pública.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
  
+                <!-- Maestría 2 -->
                 <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col">
                     <div class="bg-posgrado-dark p-8 relative">
                         <div class="absolute top-0 right-0 bg-posgrado-light text-posgrado-dark font-bold text-[16px] px-3 py-1 rounded-bl-lg">MAESTRÍA PROFESIONAL</div>
                         <h3 class="text-[22px] font-black text-white text-center mt-2">Maestría en Gestión y Evaluación de la Educación</h3>
                     </div>
+                    
                     <div class="p-8 flex-grow">
                         <p class="text-[16px] text-posgrado-dark font-bold mb-4 tracking-wide uppercase">Acreditación CONEAU - Categoría B - ResFC 324/23; RM 2422/15</p>
-                        <p class="text-[16px] text-black mb-8 font-normal">Forma profesionales capaces de gestionar y evaluar procesos educativos desde una perspectiva crítica, integradora y comprometida.</p>
+                        <p class="text-[16px] text-black mb-8 font-normal">Forma profesionales capaces de gestionar y evaluar procesos educativos desde una perspectiva crítica, integradora y con compromiso con la equidad y la mejora del sistema educativo.</p>
                         
                         <div class="bg-posgrado-surface p-6 rounded-lg border border-posgrado-light/30">
                             <h4 class="text-[18px] font-black text-posgrado-dark mb-4 flex items-center"><i class="ph ph-list-dashes mr-2"></i> Estructura Curricular</h4>
@@ -325,142 +388,358 @@
                                 <li class="flex flex-col">
                                     <div class="flex items-start">
                                         <i class="ph ph-check-circle text-posgrado-dark mt-0.5 mr-2 text-[22px]"></i>
-                                        <span><strong>Seminarios:</strong> 15 en total.</span>
+                                        <span><strong>Seminarios:</strong> 15 en total (Obligatorios y 4 Electivos).</span>
                                     </div>
                                     <details class="group mt-2 ml-7">
                                         <summary class="text-[16px] text-posgrado-dark font-bold cursor-pointer hover:underline flex items-center">
-                                            <i class="ph ph-caret-right mr-1 transition-transform group-open:rotate-90"></i> Ver Seminarios
+                                            <i class="ph ph-caret-right mr-1 transition-transform group-open:rotate-90"></i> Ver Seminarios Obligatorios
                                         </summary>
                                         <ul class="list-disc pl-4 mt-2 space-y-1 text-[16px] text-black font-normal">
                                             <li>Planeamiento y Gestión de Políticas Educativas</li>
                                             <li>Teorías de la Administración y de las Organizaciones</li>
                                             <li>Gestión y Evaluación de Programas Educativos</li>
                                             <li>Gestión y Evaluación de Instituciones Educativas</li>
+                                            <li>Diseño y gestión Curricular</li>
+                                            <li>Sistemas de información para la Gestión</li>
                                             <li>Calidad y Evaluación de la Educación</li>
+                                            <li>Formación de Formadores</li>
+                                            <li>Supervisión y dirección de instituciones educativas</li>
+                                            <li>Tecnologías de Planificación y Gestión</li>
+                                            <li>Seminario de problemáticas actuales del sistema educativo, la administración y la gestión educativa</li>
                                         </ul>
                                     </details>
                                 </li>
-                                <li class="flex items-start"><i class="ph ph-clock text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Duración:</strong> 24 meses.</span></li>
-                                <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Práctica:</strong> Taller para trabajo final y Trabajo de Campo (80 hs).</span></li>
-                                <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Egreso:</strong> Trabajo Final de Intervención.</span></li>
+                                <li class="flex items-start"><i class="ph ph-clock text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Duración:</strong> 24 meses de cursado.</span></li>
+                                <li class="flex items-start"><i class="ph ph-briefcase text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Formación para el Trabajo:</strong> Taller para trabajo final (anual) y Trabajo de Campo (80 horas).</span></li>
+                                <li class="flex items-start"><i class="ph ph-graduation-cap text-posgrado-light mt-0.5 mr-2 text-[22px]"></i><span><strong>Egreso:</strong> Trabajo Final de Intervención con defensa oral y pública.</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
- 
+
+            <!-- Cuerpo docente de seminarios obligatorios (Agregado) -->
             <div class="max-w-5xl mx-auto mt-10 bg-posgrado-surface border-l-4 border-posgrado-dark p-6 rounded-r-lg">
                 <p class="text-[16px] text-black font-normal leading-relaxed">
-                    <strong>Cuerpo docente:</strong> Norberto Fernández Lamarra, Martín Aiello, Marisa Álvarez, Carlos Cullen, Laura Fiszman, Graciela Frigerio, María Gabriela Galli, Pablo García, Eugenia Grandoli, Marcela Groppo, Norberto Góngora, Alberto Iardelevsky, Elisa Lucarelli, Viviana Mancovsky, Cristian Perez Centeno, María Gabriela Rutty, Leonardo Rodriguez Zoya, José Tasat, Lilia Toranzos, Verónica Xhardez.
+                    <strong>Cuerpo docente de seminarios obligatorios:</strong> Norberto Fernández Lamarra, Martín Aiello, Marisa Álvarez, Carlos Cullen, Laura Fiszman, Graciela Frigerio, María Gabriela Galli, Pablo García, Eugenia Grandoli, Marcela Groppo, Norberto Góngora, Alberto Iardelevsky, Elisa Lucarelli, Viviana Mancovsky, Cristian Perez Centeno, María Gabriela Rutty, Leonardo Rodriguez Zoya, José Tasat, Lilia Toranzos, Verónica Xhardez.
                 </p>
+            </div>
+ 
+            <!-- Banner imagen al final de Maestrías -->
+            <div class="mt-10 overflow-hidden rounded-xl shadow-md border-t-4 border-posgrado-dark">
+                <img src="https://scontent.faep32-1.fna.fbcdn.net/v/t39.30808-6/605112445_1286724153497339_3879005838770131682_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeHQCYPX6qbwODbsbF_5r3OpplgPc_bAq3umWA9z9sCre5jPxZb6fnphKSCCvspEo-8&_nc_ohc=YsNRAzo4tNQQ7kNvwHwLI8F&_nc_oc=AdqLsashK3Ru9Cj0bKH7SRwhfw1__MDzEQ618QGezkvCM20RxLaaK-y0yoD_greP8xXYtPS-hZw-mKEFK7NkqAHs&_nc_zt=23&_nc_ht=scontent.faep32-1.fna&_nc_gid=_kz_fcyHojJ-zZEroI0wRA&_nc_ss=7a3a8&oh=00_Af1KiZ3O2qLhGBR8ieNGo_75Cg5VObTbilnQ5IhLP6J0uA&oe=69D62892" alt="Estudiantes universitarios Maestrías UNTREF" class="w-full object-cover">
             </div>
         </section>
  
+        <!-- SECCIÓN: MODALIDAD Y ADMISIÓN -->
         <section id="admision" class="tab-content">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Modalidad -->
                 <div class="bg-white p-8 rounded-md shadow-md border border-gray-200">
                     <h2 class="text-[28px] text-posgrado-dark font-black mb-6 flex items-center"><i class="ph ph-calendar-check mr-3 text-[32px] text-posgrado-light"></i> Modalidad de Cursado</h2>
                     <p class="text-[16px] text-black mb-6 font-normal leading-relaxed">
-                        La modalidad combina encuentros presenciales en la Sede de Posgrados (Maipú 71, CABA) y encuentros remotos sincrónicos.
+                        La modalidad de cursado de cada seminario combina encuentros presenciales en la Sede de Posgrados de UNTREF (Maipú 71, CABA) y encuentros remotos sincrónicos. Se complementa con actividades en las aulas virtuales.
                     </p>
-                    <p class="font-bold text-[18px] text-posgrado-dark mb-4 uppercase tracking-wider border-b pb-2">Distribución:</p>
+                    <p class="font-bold text-[18px] text-posgrado-dark mb-4 uppercase tracking-wider border-b pb-2">Distribución anual:</p>
                     <ul class="space-y-4 text-[16px] text-black">
                         <li class="flex items-start bg-gray-50 p-4 rounded-lg border border-gray-100">
                             <i class="ph ph-caret-right text-posgrado-dark mt-1 mr-3 text-[22px]"></i>
-                            <span><strong>Cuatrimestrales:</strong> Encuentros quincenales. Viernes de 17 a 22 hs y sábados de 10 a 14 hs.</span>
+                            <span><strong>Primer y Segundo Cuatrimestre:</strong> Encuentros quincenales. Viernes de 17 a 22 hs y sábados de 10 a 14 hs. Se puede cursar uno el viernes y otro el sábado.</span>
                         </li>
                         <li class="flex items-start bg-gray-50 p-4 rounded-lg border border-gray-100">
                             <i class="ph ph-caret-right text-posgrado-dark mt-1 mr-3 text-[22px]"></i>
-                            <span><strong>Intensivos (Febrero/Julio):</strong> Una semana de duración (lunes a viernes de 17 a 22 hs).</span>
+                            <span><strong>Febrero y Julio:</strong> Seminarios intensivos. Cada uno tiene una semana de duración (lunes a viernes de 17 a 22 hs).</span>
+                        </li>
+                        <li class="flex items-start bg-gray-50 p-4 rounded-lg border border-gray-100">
+                            <i class="ph ph-caret-right text-posgrado-dark mt-1 mr-3 text-[22px]"></i>
+                            <span><strong>Talleres/Seminarios electivos:</strong> Ofrecidos durante el primer y segundo cuatrimestre en modalidad remota sincrónica.</span>
                         </li>
                     </ul>
                 </div>
  
+                <!-- Admisión -->
                 <div class="bg-posgrado-surface p-8 rounded-md shadow-md border border-posgrado-light/30">
-                    <h2 class="text-[28px] text-posgrado-dark font-black mb-6 flex items-center"><i class="ph ph-file-text mr-3 text-[32px] text-posgrado-light"></i> Requisitos</h2>
+                    <h2 class="text-[28px] text-posgrado-dark font-black mb-6 flex items-center"><i class="ph ph-file-text mr-3 text-[32px] text-posgrado-light"></i> Requisitos de Admisión</h2>
                     <ul class="space-y-3 mb-8 text-[16px] text-black">
-                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Título de grado universitario o de educación superior de carreras de 4 años de duración (Art. 39 bis LES).</span></li>
-                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Participar de una entrevista de admisión.</span></li>
+                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Poseer título de grado en Ciencias de la Educación, Sociología, Historia, Economía, Administración, Comunicación Social, Ciencias Políticas o equivalentes.</span></li>
+                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Se admitirán otros títulos con antecedentes afines, o bien, título de educación superior de carreras de 4 años de duración (Art. 39 bis LES).</span></li>
+                        <li class="flex flex-col items-start">
+                            <div class="flex items-start">
+                                <i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i>
+                                <span>Participar de una entrevista de admisión.</span>
+                            </div>
+                            <a href="mailto:pae@untref.edu.ar" class="ml-[34px] mt-3 bg-posgrado text-white font-bold py-2 px-4 rounded shadow hover:bg-posgrado-dark transition-colors text-center inline-block">
+                                Consultas pae@untref.edu.ar
+                            </a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfC6STlJca2tL2Pzh2xlU2tJoowOl9DZdsubbo3lv_FgxCfpA/viewform?usp=dialog" target="_blank" class="ml-[34px] bg-posgrado-dark text-white font-bold py-3 px-6 rounded shadow hover:bg-posgrado-DEFAULT transition-colors text-center inline-block w-full md:w-auto border-2 border-white/20 mt-2">
+                                <i class="ph ph-form-plus mr-2"></i> Completa este formulario para participar de la entrevista de admisión
+                            </a>
+                        </li>
+                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Las entrevistas inician en octubre y finalizan en febrero.</span></li>
+                        <li class="flex items-start"><i class="ph ph-check-circle text-posgrado-dark mr-3 mt-0.5 text-[22px]"></i><span>Aspirantes extranjeros deben dominar el idioma español en nivel avanzado.</span></li>
                     </ul>
+ 
                     <div class="bg-white p-5 rounded-md border border-posgrado/20 text-center">
                         <h2 class="text-[22px] text-posgrado-dark font-black mb-4 flex items-center justify-center"><i class="ph ph-wallet mr-2 text-[26px] text-posgrado-light"></i> Aranceles y Becas</h2>
                         <ul class="space-y-2 text-[16px] text-black text-left inline-block">
                             <li><i class="ph ph-check text-posgrado-dark mr-2"></i><strong>Especializaciones:</strong> Matrícula y 14 cuotas.</li>
                             <li><i class="ph ph-check text-posgrado-dark mr-2"></i><strong>Maestrías:</strong> Matrícula y 19 cuotas.</li>
+                            <li class="mt-3 text-sm italic"><i class="ph ph-star-fill text-posgrado-light mr-1"></i> Egresados y docentes UNTREF: media beca.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
  
+        <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
         <section id="faq" class="tab-content">
             <div class="text-center mb-10">
                 <h2 class="text-[28px] text-posgrado-dark font-black inline-block border-b-4 border-posgrado-light pb-2">Preguntas Frecuentes</h2>
             </div>
             
             <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Pregunta 1 -->
                 <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
-                        <span>¿A quién me dirijo si tengo consultas?</span>
-                        <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i></span>
+                        <span>¿A quién me dirijo si tengo consultas administrativas o académicas?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
                     </summary>
                     <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
                         <ul class="list-disc pl-5 space-y-3">
-                            <li><strong>Consultas académicas y constancias:</strong> <a href="mailto:pae@untref.edu.ar" class="text-posgrado-dark hover:underline font-bold">pae@untref.edu.ar</a></li>
+                            <li><strong>Cuestiones administrativas-pedagógicas y constancias:</strong> <a href="mailto:pae@untref.edu.ar" class="text-posgrado-dark hover:underline font-bold">pae@untref.edu.ar</a></li>
                             <li><strong>Pagos (Sistema SQ):</strong> <a href="mailto:sqpagosposgrados@untref.edu.ar" class="text-posgrado-dark hover:underline font-bold">sqpagosposgrados@untref.edu.ar</a></li>
+                            <li><strong>Preinscripción:</strong> <a href="https://preinscripcion.untref.edu.ar/posgrado" target="_blank" class="text-posgrado-dark hover:underline">https://preinscripcion.untref.edu.ar/posgrado</a></li>
+                            <li><strong>Inscripción a seminarios:</strong> <a href="https://autogestion.untref.edu.ar/posgrado/" target="_blank" class="text-posgrado-dark hover:underline">https://autogestion.untref.edu.ar/posgrado/</a></li>
+                            <li><strong>Alumnos extranjeros (temas de gestión):</strong> Yanina Lobos (<a href="mailto:ylobos@untref.edu.ar" class="text-posgrado-dark hover:underline font-bold">ylobos@untref.edu.ar</a>)</li>
                         </ul>
                     </div>
                 </details>
-                
+ 
+                <!-- Pregunta 2 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Dónde consulto los planes de estudio completos?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        <ul class="space-y-3">
+                            <li><i class="ph ph-link text-posgrado-dark mr-2"></i> <a href="https://www.untref.edu.ar/posgrado/maestria-en-gestion-y-evaluacion-de-la-educacion" target="_blank" class="text-posgrado-dark hover:underline font-bold">Maestría en gestión y evaluación de la educación</a></li>
+                            <li><i class="ph ph-link text-posgrado-dark mr-2"></i> <a href="https://www.untref.edu.ar/posgrado/maestria-en-politicas-y-administracion-de-la-educacion" target="_blank" class="text-posgrado-dark hover:underline font-bold">Maestría en políticas y administración de la educación</a></li>
+                            <li><i class="ph ph-link text-posgrado-dark mr-2"></i> <a href="https://www.untref.edu.ar/posgrado/planeamiento-y-gestion-de-la-educacion" target="_blank" class="text-posgrado-dark hover:underline font-bold">Especialización en Planeamiento y gestión de la educación</a></li>
+                            <li><i class="ph ph-link text-posgrado-dark mr-2"></i> <a href="http://untref.edu.ar/posgrado/especializacion-gestion-y-docencia-para-la-educacion-superior" target="_blank" class="text-posgrado-dark hover:underline font-bold">Especialización en gestión y docencia para la educación superior</a></li>
+                            <li><i class="ph ph-link text-posgrado-dark mr-2"></i> <a href="https://www.untref.edu.ar/posgrado/especializacion-en-gestion-y-evaluacion-de-instituciones-educativas" target="_blank" class="text-posgrado-dark hover:underline font-bold">Especialización en Gestión y Evaluación de Instituciones Educativas</a></li>
+                        </ul>
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 3 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Qué diferencia hay entre los seminarios obligatorios y electivos?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Los seminarios de la formación general detallados en cada plan de estudios son de cursado obligatorio ya que están vinculados a la especificidad de cada posgrado. Para completar tu formación, debes elegir otros seminarios – denominados electivos- ofrecidos por el posgrado, según tu interés, preferencia o área temática en que desarrollarás en tu trabajo final o tesis.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 4 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Se pueden elegir los seminarios a cursar? ¿Cómo los elijo?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Sí, la trayectoria es personal. Según tu plan de estudios, deberás seleccionar los seminarios de tu interés. En cada período de inscripción (febrero, julio, primer y segundo cuatrimestre), recibirás por correo electrónico la nómina de seminarios disponibles para realizar la inscripción.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 5 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Cuántos seminarios se cursan por año?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        La trayectoria de cursado es personal. En cada período puedes cursar la cantidad de seminarios que desees (sin tener incompatibilidad horaria entre seminarios).
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 6 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Los posgrados son a distancia?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        No. Los planes de estudios son de cursado presencial, donde se combinan encuentros presenciales en la sede de Posgrados ubicada en Maipú 71 (CABA) con encuentros remotos sincrónicos.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 7 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Puedo inscribirme en un posgrado si mi título de base no tiene 4 años de duración?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Posterior a la reunión de admisión y analizados los antecedentes académicos y la trayectoria laboral, la Coordinación informará si es pertinente la presentación de legajo ante la comisión de admisión excepcional de la Dirección de Posgrado. Mientras la comisión dictamina, se puede cursar en calidad de oyente.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 8 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Puedo inscribirme si no soy del área educativa?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Sí, siempre que los antecedentes profesionales y académicos sean afines y se cumpla con los requisitos de ingreso, vinculado a la duración mínima del plan de estudios del título de base.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 9 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Cómo se aprueban los seminarios?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Para obtener la regularidad en los seminarios se requiere del 75% de asistencia en cada uno de ellos. Una vez obtenida la regularidad, se debe presentar un trabajo atendiendo a las pautas establecidas por el profesorado. La calificación mínima para aprobar un seminario es de 7 (siete) puntos. Según el reglamento, la regularidad tiene la vigencia de un año.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 10 -->
                 <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                     <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
                         <span>¿Qué sucede si hice una especialización y luego quiero continuar con una maestría?</span>
-                        <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i></span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
                     </summary>
                     <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
-                        Por ser un programa integrado, los seminarios aprobados en la especialización se acreditan automáticamente en la maestría, reconociendo además las cuotas abonadas.
+                        En primera instancia se debe realizar la inscripción en los períodos propuestos por la Universidad y abonar la matrícula. Por ser un programa integrado, los seminarios aprobados en la especialización se acreditan en la maestría, ya sea tanto como obligatorios (los que coincidan en los planes) o como electivos (en caso de que los seminarios aprobados en la especialización no sean obligatorios para la maestría). También se reconocen las cuotas pagas de la especialización en la maestría.
                     </div>
                 </details>
+ 
+                <!-- Pregunta 11 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Cómo realizo las prácticas o pasantías?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        <ul class="list-disc pl-5 space-y-3">
+                            <li><strong>Especializaciones (Pasantía Profesional):</strong> Una vez avanzada la cursada, debe ponerse en contacto con la coordinación.</li>
+                            <li><strong>Maestría Académica (Investigación):</strong> El posgrado invitará a participar de un equipo de investigación o bien, si ya participa de un equipo puede acreditarlo.</li>
+                            <li><strong>Maestría Profesional (Trabajo de Campo):</strong> Se acredita durante el cursado del taller anual que orienta la construcción del proyecto de intervención, al realizar el diagnóstico inicial.</li>
+                        </ul>
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 12 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Cómo obtengo mi título de posgrado?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Habiendo cumplimentado todos los requisitos administrativos que solicita el posgrado y aprobado todos los seminarios y realizado las pasantías que se detallan en cada plan de estudios. Así como defendido satisfactoriamente la tesis o el trabajo final de intervención, en el caso de las maestrías o aprobado el trabajo final integrador, en las especializaciones.
+                    </div>
+                </details>
+ 
+                <!-- Pregunta 13 -->
+                <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-[18px] text-posgrado-dark hover:bg-gray-50 transition-colors">
+                        <span>¿Cuál es el valor de los aranceles?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-posgrado-dark text-[24px]"></i>
+                        </span>
+                    </summary>
+                    <div class="text-[16px] text-black p-5 pt-0 border-t border-gray-100 mt-2">
+                        Los aranceles se actualizan periódicamente. Para consultar los costos vigentes, formas de pago y posibles políticas de becas o descuentos (para graduados UNTREF, docentes, etc.), por favor escríbenos directamente a <a href="mailto:pae@untref.edu.ar" class="text-posgrado-dark hover:underline font-bold">pae@untref.edu.ar</a>.
+                    </div>
+                </details>
+ 
+                <!-- Caja de contacto adicional -->
+                <div class="mt-8 bg-posgrado-surface p-8 rounded-xl shadow-sm border border-posgrado-light/50 text-center">
+                    <h3 class="text-[22px] text-posgrado-dark font-black mb-2">¿Tienes otra consulta?</h3>
+                    <p class="text-[16px] text-black font-normal mb-1">Nuestro equipo de coordinación está a tu disposición.</p>
+                    <p class="text-[16px] text-black font-normal">Escríbenos a <a href="mailto:pae@untref.edu.ar" class="text-posgrado-dark font-bold hover:underline">pae@untref.edu.ar</a></p>
+                </div>
             </div>
         </section>
     </main>
  
+    <!-- Footer Institucional -->
     <footer class="bg-institucional text-institucional-surface py-10 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <h2 class="text-2xl font-black text-white mb-4">UNTREF</h2>
-                <p class="text-sm">Universidad Nacional de Tres de Febrero</p>
+                <p class="text-sm mb-2">Universidad Nacional de Tres de Febrero</p>
                 <p class="text-sm text-posgrado-light">Programa en Políticas y Administración de la Educación</p>
             </div>
             <div>
                 <h3 class="text-lg font-bold text-white mb-4">Sede Posgrados</h3>
-                <p class="text-sm"><i class="ph ph-map-pin mr-2 text-posgrado-light"></i> Maipú 71, CABA, Argentina</p>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-center"><i class="ph ph-map-pin mr-2 text-posgrado-light text-lg"></i> Maipú 71, Ciudad Autónoma de Buenos Aires</li>
+                </ul>
             </div>
             <div>
-                <h3 class="text-lg font-bold text-white mb-4">Contacto</h3>
-                <p class="text-sm"><i class="ph ph-envelope mr-2 text-posgrado-light"></i> <a href="mailto:pae@untref.edu.ar" class="hover:text-white">pae@untref.edu.ar</a></p>
+                <h3 class="text-lg font-bold text-white mb-4">Contacto Directo</h3>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-center"><i class="ph ph-envelope mr-2 text-posgrado-light text-lg"></i> <a href="mailto:pae@untref.edu.ar" class="hover:text-white transition-colors">pae@untref.edu.ar</a></li>
+                </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-institucional-light/40 text-center text-sm">
-            <p>© 2026 Posgrados en Políticas y Administración de la Educación. UNTREF. Todos los derechos reservados.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-institucional-light/40 text-center text-sm text-institucional-surface/80">
+            <p>© 2026 Posgrados en Políticas y Administración de la Educación. Universidad Nacional de Tres de Febrero. Todos los derechos reservados.</p>
         </div>
     </footer>
  
+    <!-- Script para interactividad (Pestañas) -->
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
+            
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
                 tabcontent[i].classList.remove("active");
             }
+            
             tablinks = document.getElementsByClassName("tab-btn");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("text-white", "border-posgrado-light");
                 tablinks[i].classList.add("text-gray-300", "border-transparent");
             }
+            
             document.getElementById(tabName).style.display = "block";
             setTimeout(() => document.getElementById(tabName).classList.add("active"), 10);
+            
             evt.currentTarget.classList.remove("text-gray-300", "border-transparent");
             evt.currentTarget.classList.add("text-white", "border-posgrado-light");
         }
