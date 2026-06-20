@@ -33,10 +33,10 @@
         }
     </script>
  
-    <!-- Fuentes de Google: LATO -->
+    <!-- Fuentes de Google: LATO + ARCHIVO (para el logo UNTREF vectorizado) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Archivo:wdth,wght@75,400;75,900&display=swap" rel="stylesheet">
     
     <!-- Iconos Phosphor -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -68,6 +68,13 @@
         @keyframes spin-slow-reverse { 100% { transform: rotate(-360deg); } }
         .animate-spin-slow { animation: spin-slow 12s linear infinite; }
         .animate-spin-slow-reverse { animation: spin-slow-reverse 12s linear infinite; }
+
+        /* Logo UNTREF vectorizado (texto inferior en tipografía Archivo) */
+        .untref-logo-sub {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 400;
+            font-stretch: 75%;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-black antialiased flex flex-col min-h-screen">
@@ -77,12 +84,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center">
             <div>
                 <!-- H1: 36px -->
-                 <a title="UNTREF, Dominio público, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:UNTREF_Logo_2016.svg">
-                    <img width="100" alt="UNTREF Logo 2016" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/UNTREF_Logo_2016.svg/330px-UNTREF_Logo_2016.svg.png"></a>
+                <svg width="110" height="65.29" viewBox="49 49 471 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UNTREF - Universidad Nacional de Tres de Febrero">
+                    <defs>
+                        <clipPath id="clipPath20-header" clipPathUnits="userSpaceOnUse">
+                            <path d="M 0,195.368 H 412.491 V 0 H 0 Z" />
+                        </clipPath>
+                    </defs>
+                    <g transform="matrix(1.3333333,0,0,-1.3333333,0,260.49067)">
+                        <path d="M 357.621,54.871 H 54.871 v 11.347 h 302.75 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+                        <g clip-path="url(#clipPath20-header)">
+                            <g transform="translate(271.9521,85.627)">
+                                <path d="M 0,0 V 54.871 H 36.154 V 45.808 H 10.936 V 33.001 h 23.05 V 23.938 H 10.936 V 9.063 h 26.4 V 0 Z M 50.832,0 V 54.871 H 85.509 V 45.808 H 61.767 V 33.001 H 83.341 V 23.938 H 61.767 V 0 Z m -96.737,0 h -10.936 v 54.871 h 22.756 c 12.117,0 18.126,-5.517 18.126,-16.55 0,-8.669 -4.334,-13.004 -8.373,-14.383 L -15.071,0 h -11.92 l -8.078,21.771 h -10.836 z m 0,30.538 h 8.964 c 6.403,0 9.555,1.774 9.555,7.783 0,6.009 -3.152,7.782 -9.555,7.782 h -8.964 z m -45.907,15.171 h -13.89 v 9.162 h 38.813 v -9.162 h -13.89 V 0 H -91.812 Z M -158.11,0 v 54.871 h 12.905 l 18.126,-36.745 h 0.493 v 36.745 h 10.541 V 0 h -12.708 l -18.52,38.222 h -0.493 V 0 Z m -58.81,54.871 h 11.032 V 16.845 c 0,-6.304 3.152,-8.767 9.457,-8.767 6.306,0 9.556,2.463 9.556,8.767 v 38.026 h 10.935 V 16.845 c 0,-11.919 -7.289,-17.83 -20.491,-17.83 -13.2,0 -20.489,5.911 -20.489,17.929 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+                            </g>
+                        </g>
+                    </g>
+                    <g class="untref-logo-sub" fill="#ffffff">
+                        <text x="73" y="240" font-size="33.95" letter-spacing="5.36">UNIVERSIDAD NACIONAL</text>
+                        <text x="73" y="305" font-size="33.95" letter-spacing="5.36">DE TRES DE FEBRERO</text>
+                    </g>
+                </svg>
 
                 <!-- Texto: 16px -->
-                <p class="text-[16px] font-normal text-institucional-surface mt-1">Universidad Nacional de Tres de Febrero</p>
-            </div>
+                </div>
             <div class="mt-4 md:mt-0 text-center md:text-right border-t md:border-t-0 md:border-l border-institucional-light pt-4 md:pt-0 md:pl-6">
                 <!-- H2 superior: 28px -->
                 <h2 class="text-[28px] leading-tight font-bold">Programa de Posgrados </h2>
@@ -700,10 +723,26 @@
     <footer class="bg-institucional text-institucional-surface py-10 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-                <a title="UNTREF, Dominio público, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:UNTREF_Logo_2016.svg">
-                    <img width="200" alt="UNTREF Logo 2016" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/UNTREF_Logo_2016.svg/330px-UNTREF_Logo_2016.svg.png"></a>
-                    <p class="text-sm mb-2">Universidad Nacional de Tres de Febrero</p>
-                <p class="text-sm text-posgrado-light">Programa en Políticas y Administración de la Educación</p>
+                <svg width="200" height="118.72" viewBox="49 49 471 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UNTREF - Universidad Nacional de Tres de Febrero">
+                    <defs>
+                        <clipPath id="clipPath20-footer" clipPathUnits="userSpaceOnUse">
+                            <path d="M 0,195.368 H 412.491 V 0 H 0 Z" />
+                        </clipPath>
+                    </defs>
+                    <g transform="matrix(1.3333333,0,0,-1.3333333,0,260.49067)">
+                        <path d="M 357.621,54.871 H 54.871 v 11.347 h 302.75 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+                        <g clip-path="url(#clipPath20-footer)">
+                            <g transform="translate(271.9521,85.627)">
+                                <path d="M 0,0 V 54.871 H 36.154 V 45.808 H 10.936 V 33.001 h 23.05 V 23.938 H 10.936 V 9.063 h 26.4 V 0 Z M 50.832,0 V 54.871 H 85.509 V 45.808 H 61.767 V 33.001 H 83.341 V 23.938 H 61.767 V 0 Z m -96.737,0 h -10.936 v 54.871 h 22.756 c 12.117,0 18.126,-5.517 18.126,-16.55 0,-8.669 -4.334,-13.004 -8.373,-14.383 L -15.071,0 h -11.92 l -8.078,21.771 h -10.836 z m 0,30.538 h 8.964 c 6.403,0 9.555,1.774 9.555,7.783 0,6.009 -3.152,7.782 -9.555,7.782 h -8.964 z m -45.907,15.171 h -13.89 v 9.162 h 38.813 v -9.162 h -13.89 V 0 H -91.812 Z M -158.11,0 v 54.871 h 12.905 l 18.126,-36.745 h 0.493 v 36.745 h 10.541 V 0 h -12.708 l -18.52,38.222 h -0.493 V 0 Z m -58.81,54.871 h 11.032 V 16.845 c 0,-6.304 3.152,-8.767 9.457,-8.767 6.306,0 9.556,2.463 9.556,8.767 v 38.026 h 10.935 V 16.845 c 0,-11.919 -7.289,-17.83 -20.491,-17.83 -13.2,0 -20.489,5.911 -20.489,17.929 z" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+                            </g>
+                        </g>
+                    </g>
+                    <g class="untref-logo-sub" fill="#ffffff">
+                        <text x="73" y="240" font-size="33.95" letter-spacing="5.36">UNIVERSIDAD NACIONAL</text>
+                        <text x="73" y="305" font-size="33.95" letter-spacing="5.36">DE TRES DE FEBRERO</text>
+                    </g>
+                </svg>
+                   <p class="text-sm text-posgrado-light">Programa en Políticas y Administración de la Educación</p>
             </div>
             <div>
                 <h3 class="text-lg font-bold text-white mb-4">Sede Posgrados</h3>
